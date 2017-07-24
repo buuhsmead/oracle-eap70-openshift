@@ -3,6 +3,8 @@ echo "Before assembling"
 
 
 # https://docs.openshift.com/container-platform/3.5/using_images/s2i_images/customizing_s2i_images.html#customizing-S2I-images-invoking-scripts-embedded-in-an-image
+# docker inspect --format='{{ index .Config.Labels "io.openshift.s2i.scripts-url" }}' registry.access.redhat.com/jboss-eap-7/eap70-openshift
+# image:///usr/local/s2i
 /usr/libexec/s2i/assemble
 rc=$?
 
