@@ -4,4 +4,4 @@ MAINTAINER buuhsmead
 
 ADD modules/com/ $JBOSS_HOME/modules/com/
 
-COPY s2i /tmp/src
+COPY s2i/ /tmp/src/.s2i/
