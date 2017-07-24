@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "Before assembling"
+
+
+# https://docs.openshift.com/container-platform/3.5/using_images/s2i_images/customizing_s2i_images.html#customizing-S2I-images-invoking-scripts-embedded-in-an-image
+/usr/libexec/s2i/assemble
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo "After successful assembling"
+    ls -la $JBOSS_HOME/modules/com/oracle/main
+    # replace stanza named ##OJDBC_JAR## with the name of the oracle jdbc driver jar
+    # add in $JBOSS_HOME/standalone/configuration/standalone-openshift.xml
+    # - driver section
+    # - datasource section
+else
+    echo "After failed assembling"
+fi
+
+exit $rc
