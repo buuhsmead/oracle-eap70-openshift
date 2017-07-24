@@ -4,5 +4,6 @@ MAINTAINER buuhsmead
 
 ADD modules/com/ $JBOSS_HOME/modules/com/
 
+RUN mkdir /tmp/src
 COPY s2i/ /tmp/src/.s2i/
-RUN chmod -R 777 /tmp/src/*
+RUN chmod -R 777 /tmp/src/.s2i
