@@ -7,7 +7,7 @@ ADD modules/com/ $JBOSS_HOME/modules/com/
 
 
 COPY s2i/ /tmp/src/.s2i/ 
-RUN chown -R jboss:root /tmp/src/*
+RUN chown -R jboss:root /tmp/src/.s2i
 RUN ls -la /tmp
 RUN ls -la /tmp/src
 RUN ls -la /tmp/src/.s2i
